@@ -22,7 +22,11 @@ The system works best when the catalog already has songs close to the user's vib
 
 ## Evaluation Process
 
-I tested the model with four profiles: `High-Energy Pop`, `Chill Lofi`, `Deep Intense Rock`, and `Edge Case: Sad but High Energy`. I compared the top results to my own musical intuition and checked whether the printed reasons matched the scoring logic. I also ran one experiment where I doubled the energy weight and cut the genre weight in half to see how sensitive the rankings were.
+I tested the model with four profiles: `High-Energy Pop`, `Chill Lofi`, `Deep Intense Rock`, and `Edge Case: Sad but High Energy`. I compared the top results to my own musical intuition and checked whether the printed reasons matched the scoring logic.
+
+I also used automated tests as a reliability check. The latest test run passed `5 out of 5` tests. The tests check that recommendations are sorted correctly, explanations are produced, confidence scores stay between `0` and `1`, recommendation output includes confidence and explanations, and diversity penalties reduce repeated artists.
+
+The strongest top recommendations had confidence scores between `0.78` and `1.00`. The weakest behavior appeared in the `sad but high energy` profile because the small song catalog does not contain many songs with that exact combination.
 
 ## Intended Use and Non-Intended Use
 
@@ -31,8 +35,15 @@ This system is intended for classroom exploration and learning about recommendat
 ## Ideas for Improvement
 
 - Add many more songs and more varied mood combinations.
-- Add a diversity rule so the top results do not cluster around one genre or artist.
+- Improve the diversity rule so the top results do not cluster around one genre or artist.
 - Let users express dislikes or hard constraints, such as "not pop" or "low tempo only."
+- Add more validation rules for missing or unusual listener inputs.
+
+## AI Collaboration Reflection
+
+I used AI assistance to help improve the structure of the project, add a browser interface, write clearer documentation, and strengthen the reliability tests. AI collaboration was useful for quickly suggesting implementation patterns, but I still had to review the code, run the system, check the outputs, and decide whether the recommendations made sense.
+
+The main lesson was that AI can speed up problem-solving, but it does not remove the need for human judgment. I had to choose what counted as a good recommendation, notice when the dataset was too limited, and make sure the final project was understandable to another person.
 
 ## Personal Reflection
 

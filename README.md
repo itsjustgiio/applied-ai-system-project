@@ -24,7 +24,7 @@ The AI implementation is the recommender in `src/recommender.py`. It uses rule-b
 
 The system starts with a human-created listener profile and a local song catalog in `data/songs.csv`. `src/main.py` loads the catalog, sends each profile to the recommender, and prints the ranked results. `src/recommender.py` contains the core AI logic: scoring, ranking, explanation generation, scoring modes, and diversity adjustment.
 
-The system diagram is documented in [step 2. Design and Architecture.md](<step 2. Design and Architecture.md>). In short, the data flow is:
+The system diagram is documented in [diagrams/system_architecture.md](diagrams/system_architecture.md) and also described in [step 2. Design and Architecture.md](<step 2. Design and Architecture.md>). In short, the data flow is:
 
 ```text
 User Profile -> Song Catalog Loader -> Recommender Scoring -> Diversity Adjustment -> Ranked Recommendations -> Human Review
@@ -99,18 +99,20 @@ The current application runs several built-in evaluation profiles. Each profile 
 Demo video or walkthrough:
 
 ```text
-Loom link:
+Loom link: Add your Loom video link here after recording
 ```
+
+Screenshot walkthrough:
+
+![Streamlit recommendation demo 1](assets/image.png)
+![Streamlit recommendation demo 2](assets/image-1.png)
+![Streamlit recommendation demo 3](assets/image-2.png)
 
 The walkthrough should show the system running end-to-end:
 
 1. Open the browser app with `python -m streamlit run streamlit_app.py`.
 2. Change the listener profile controls in the sidebar.
 3. Review the AI-generated recommendations, confidence scores, and explanations.
-
-![test1](image.png)
-![test2](image-1.png)
-![lofitest](image-2.png)
 
 ### Example 1: High-Energy Pop
 
